@@ -22,7 +22,7 @@ router.post('/signup', function(req, res){
       // we created it, redirect to home 
         console.log(`🍕 User successfully created`);
         passport.authenticate('local', {
-          successRedirect: '/',
+          successRedirect: '/homepage',
           successFlash: 'Account created and logged in!'
         }) (req, res);
     } else {
@@ -41,7 +41,7 @@ router.post('/signup', function(req, res){
 
 
 router.get('/login', function(req, res) {
-  res.render('auth/login');
+  res.render('/homepage');
 });
 
 

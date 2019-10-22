@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
   project.associate = function(models) {
     // associations can be defined here
     models.project.belongsTo(models.user);
-    models.projects.belongsTo(models.prompt);
-    models.projects.hasMany(models.entry);
+    models.project.belongsTo(models.prompt);
+    models.project.hasMany(models.entry);
   };
   return project;
 };
