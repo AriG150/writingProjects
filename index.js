@@ -88,7 +88,7 @@ app.get('/homepage', function(req, res){
 })
 
 //GET- reads the prompt that the user chose on /homepage
-app.get('/project/new', function(req, res){
+app.get('/project/new', isLoggedIn, function(req, res){
   // res.render('homepage')
   axios.get(`${BASE_URL}${req.query.promptType}`)
     .then(function(promptInfo){
@@ -104,12 +104,9 @@ app.get('/project/new', function(req, res){
 //front end has prompt, also has user input (via form)
 //when POST user input and user prompt 
 
-//create prompt, create entry, create project, create project 
-
-
 
 app.use('/auth', require('./routes/auth'));
-app.use('/project', require('./routes/project'))
+app.use('/project', isLoggedIn, require('./routes/project'))
 
 
 var server = app.listen(process.env.PORT || 3004, () => console.log(`🎧 You're listening to Port 3004🎧`));
