@@ -41,7 +41,7 @@ router.post('/signup', function(req, res){
 
 
 router.get('/login', function(req, res) {
-  res.render('/homepage');
+  res.render('auth/login');
 });
 
 
