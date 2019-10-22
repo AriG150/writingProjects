@@ -76,9 +76,10 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
-app.use('/auth', require('./controllers/auth'));
+app.use('/auth', require('./routes/auth'));
+app.use('/project', require('./routes/project'))
 
 
-var server = app.listen(process.env.PORT || 3001, () => console.log(`🎧 You're listening to Port 3001🎧`));
+var server = app.listen(process.env.PORT || 3004, () => console.log(`🎧 You're listening to Port 3004🎧`));
 
 module.exports = server;
