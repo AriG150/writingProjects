@@ -11,9 +11,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      entryId: {
-        type: Sequelize.INTEGER
-      },
       promptId: {
         type: Sequelize.INTEGER
       },

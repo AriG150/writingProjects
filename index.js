@@ -1,4 +1,5 @@
 require('dotenv').config();
+const axios = require('axios');
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const flash = require('connect-flash');
@@ -18,6 +19,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(ejsLayouts);
 app.use(helmet());
+
+
+const BASE_URL = 'https://ineedaprompt.com/dictionary/default/prompt?q=';
+
 
 //Rate limiters for login and signup
 const loginLimiter = new RateLimit({
@@ -72,9 +77,36 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
-});
+//
+app.get('/homepage', function(req, res){
+  res.render('homepage')
+  // db.projects.findAll()
+  //   .then(function(foundProjects) {
+  //     res.render('homepage', {projects: foundProjects})
+  //   })
+  //   .catch()
+})
+
+//GET- reads the prompt that the user chose on /homepage
+app.get('/project/new', function(req, res){
+  // res.render('homepage')
+  axios.get(`${BASE_URL}${req.query.promptType}`)
+    .then(function(promptInfo){
+      var selectedPrompt = promptInfo.data
+      console.log(`🍥`)
+      console.log(selectedPrompt)
+      res.render('new', {prompt: selectedPrompt})
+    })
+})
+  
+
+//axios get's prmopt -> front end 
+//front end has prompt, also has user input (via form)
+//when POST user input and user prompt 
+
+//create prompt, create entry, create project, create project 
+
+
 
 app.use('/auth', require('./routes/auth'));
 app.use('/project', require('./routes/project'))

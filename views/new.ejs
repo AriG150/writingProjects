@@ -1,4 +1,13 @@
-<h2>This holds all of the new project information </h2>
 
-<h3>Prompt:</h3>
-<h1> <%= prompt.english %></h1>
+
+<h2>Prompt:</h2>
+<h3> <%= prompt.english %></h3>
+
+<form action="/project/new" method="POST">
+  <input type="hidden" name="prompt" value="<%= prompt.english %>">
+  Project Name <input type="text" name="projectName" id="projectName">
+  <hr>
+  Text: <input type="text" name="textField" id="textField">
+  <input type="submit" value="Save Project">
+</form>
+

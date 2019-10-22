@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const project = sequelize.define('project', {
     name: DataTypes.STRING,
-    entryId: DataTypes.INTEGER,
     promptId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {});
