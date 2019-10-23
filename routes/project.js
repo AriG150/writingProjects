@@ -4,13 +4,44 @@ const router = express.Router();
 const passport = require('../config/ppConfig');
 const db = require('../models');
 
+const BASE_URL = 'https://ineedaprompt.com/dictionary/default/prompt?q=';
 
-router.get('/:id', function(req, res){
-  res.send('does this work?')
+//GET- reads the prompt that the user chose on /homepage
+router.get('/new', function(req, res){
+  // res.render('homepage')
+  axios.get(`${BASE_URL}${req.query.promptType}`)
+    .then(function(promptInfo){
+      var selectedPrompt = promptInfo.data
+      console.log(`🍥`)
+      console.log(selectedPrompt)
+      res.render('new', {prompt: selectedPrompt})
+    })
 })
 
 
-//collects information found on new.ejs, and initializes all the databases in order for the data to be shown on the next page 
+// Call/get the prompt (text), project(name), entry(text) information from the database, res.render onto view.ejs
+
+router.get('/:id', function(req, res){
+  db.project.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.prompt, db.entry]
+  })
+  .then(function(project){
+    res.render('view', { project })
+    console.log(`🐷`, project )
+  })
+  .catch(function(error){
+    console.log(`🐻`, 'bad news bears')
+    console.log(error)
+  })
+})
+
+
+
+
+//CREATE, holds all prompt, user, project, entry information associated with a prompt, saved to DB's 
 router.post('/new', function(req, res){
   db.prompt.findOrCreate({
     where: {
@@ -18,8 +49,7 @@ router.post('/new', function(req, res){
     }
   })
     .then(function([prompt, created]){
-      console.log('🎉')
-      console.log(prompt);
+      console.log('🎉', prompt)
       db.project.create({
         name: req.body.projectName,
         promptId: prompt.id,
@@ -30,17 +60,20 @@ router.post('/new', function(req, res){
           projectId: project.id
         })
         .then(function(entry){
-          console.log(`🍕 got tags`)
+          // console.log(`🚥 This is the entry information:`)
+          // console.log(entry)
+          // console.log(`🚥 this is the prompt information `)
+          // console.log(prompt)
           res.redirect(`/project/${project.id}`)
         })
       })
+    }) 
+    .catch(function(error){
+      console.log(`🐻`, 'bad news bears')
+      console.log(error)
     })
 })
 
-
-
-
-//create or find prompt, create project with prompt id, create entry with project id, redirect to  []
 
 
 module.exports = router;

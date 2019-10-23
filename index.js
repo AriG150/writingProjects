@@ -21,9 +21,6 @@ app.use(ejsLayouts);
 app.use(helmet());
 
 
-const BASE_URL = 'https://ineedaprompt.com/dictionary/default/prompt?q=';
-
-
 //Rate limiters for login and signup
 const loginLimiter = new RateLimit({
   windowMs: 100 * 60 * 5, 
@@ -87,17 +84,7 @@ app.get('/homepage', function(req, res){
   //   .catch()
 })
 
-//GET- reads the prompt that the user chose on /homepage
-app.get('/project/new', isLoggedIn, function(req, res){
-  // res.render('homepage')
-  axios.get(`${BASE_URL}${req.query.promptType}`)
-    .then(function(promptInfo){
-      var selectedPrompt = promptInfo.data
-      console.log(`🍥`)
-      console.log(selectedPrompt)
-      res.render('new', {prompt: selectedPrompt})
-    })
-})
+
   
 
 //axios get's prmopt -> front end 
@@ -107,6 +94,7 @@ app.get('/project/new', isLoggedIn, function(req, res){
 
 app.use('/auth', require('./routes/auth'));
 app.use('/project', isLoggedIn, require('./routes/project'))
+app.use('/profile', isLoggedIn, require('./routes/profile'))
 
 
 var server = app.listen(process.env.PORT || 3004, () => console.log(`🎧 You're listening to Port 3004🎧`));
