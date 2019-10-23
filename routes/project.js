@@ -9,6 +9,8 @@ router.get('/:id', function(req, res){
   res.send('does this work?')
 })
 
+
+//collects information found on new.ejs, and initializes all the databases in order for the data to be shown on the next page 
 router.post('/new', function(req, res){
   db.prompt.findOrCreate({
     where: {
