@@ -8,12 +8,14 @@ const isLoggedIn = require('./middleware/isLoggedIn');
 const session = require('express-session');
 const app = express();
 const passport = require('./config/ppConfig');
+const methodOverride = require('method-override');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const db = require('./models');
 const RateLimit = require('express-rate-limit');
 
 app.set('view engine', 'ejs');
 
+app.use(methodOverride('_method'));
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
@@ -77,19 +79,8 @@ app.get('/', function(req, res) {
 //
 app.get('/homepage', function(req, res){
   res.render('homepage')
-  // db.projects.findAll()
-  //   .then(function(foundProjects) {
-  //     res.render('homepage', {projects: foundProjects})
-  //   })
-  //   .catch()
 })
 
-
-  
-
-//axios get's prmopt -> front end 
-//front end has prompt, also has user input (via form)
-//when POST user input and user prompt 
 
 
 app.use('/auth', require('./routes/auth'));
