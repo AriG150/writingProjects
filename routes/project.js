@@ -20,7 +20,6 @@ router.get('/new', function(req, res){
 
 
 // Call/get the prompt (text), project(name), entry(text) information from the database, res.render onto view.ejs
-
 router.get('/:id', function(req, res){
   db.project.findOne({
     where: {
