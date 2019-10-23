@@ -6,9 +6,7 @@ const methodOverride = require('method-override');
 const db = require('../models');
 
 
-//create project page which will hold all the users project names
-//include if/else statment => if user (req.user.id) is truthy show their project names, if user is falsey link them to /project/new
-
+// shows index of all users project names 
 router.get('/', function(req, res) {
   db.project.findAll({
     where: {
@@ -25,6 +23,7 @@ router.get('/', function(req, res) {
     })
 })
 
+// delete route to delete individual projects via their name 
 router.delete('/:id', function(req, res) { 
   db.project.destroy({
     where: {
@@ -32,11 +31,47 @@ router.delete('/:id', function(req, res) {
     }
   }).then(function(){
     res.redirect('/profile')
-  }
-  ).catch(function(error){
+  }).catch(function(error){
     console.log(`🚨`)
     console.log(error)
   })
 })
+
+
+router.get('/edit/:id', function(req, res) {
+  db.project.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function(projectInfo){
+    res.render('edit', {projectInfo})
+  })
+    .catch(function(error){
+      console.log(`🚨`)
+      console.log(error)
+  })
+})
+
+router.put('/edit/:id', function(req, res){
+  console.log(req.body)
+  db.project.update({
+    name: req.body.projectName
+  }, {
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(function(projectInfo){
+      console.log(projectInfo)
+      res.redirect('/profile')
+    })
+    .catch(function(error){
+      console.log(`🚨`)
+      console.log(error)
+    })
+})
+
+
 
 module.exports = router;
