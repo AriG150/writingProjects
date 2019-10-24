@@ -19,6 +19,8 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 -PostgresSQL  
 -Sequelize  
 
+
+
 ## API
   From the wonderful and hillarious (https://ineedaprompt.com/)  
 
@@ -38,6 +40,8 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 -Wrote basic site architecture  
 -Researched API and drafted models  
 -Created basic wireframing  
+
+![Photo of models](public/img/models.png)
 
 ### Sprint 2 
 -Implemented auth, including hashed passwords and an authorization flow   
