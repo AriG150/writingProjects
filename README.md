@@ -2,6 +2,10 @@
 
 A website for writers suffering from writers block. Select a hillarious prompt to jog you out of the block and start writing away! 
 
+## Link to Live Site:
+- Please allow 10-15 seconds for Heroku to boot  
+
+
 ## Requirements
 - Build a full stack Node app with at least 2 models.
 - Include sign up/log in functionality, with hashed passwords and an authorization flow.
