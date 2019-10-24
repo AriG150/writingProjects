@@ -84,4 +84,4 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 
 ## Future Improvements
 -Improve styling   
--Improve userflow
+-Improve user flow
