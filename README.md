@@ -15,25 +15,31 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 ## Technologies Used 
 - Node/Express
   -Key Modules:
-    -User: username, email, and hashed password of a user
-    -Projects: includes project name, promptId, userId
-    -Entries: includes the text of each entry for a project 
-    -Prompts: includes the prompt information for a project
+    -Passport/Bycrypt: Authentification and password hashing
+-PostgresSQL
+-Sequelize 
 
 ## API
   From the wonderful and hillarious (https://ineedaprompt.com/)
 
 ## User Story 
+-As a user I want to...
+  -Signup/Login/Logout
+  -Request a prompt
+  -Write a new project
+  -View all projects
+  -View detail of individual project
+  -Edit/Delete a project
 
 ## Development 
 
-## CRUD routes 
+## CRUD Routes and Models  
+| CRUD | ROUTE | Function |
+| ---- | ----- | -------- |
+| GET  |  /homepage | Homepage where user can choose a type of prompt |
+| GET  | /auth/signup | Renders signup page | 
+| POST | /auth/signup | Creates a new user in the database | 
+| GET | /auth/login | Renders login page | 
+| POST | /auth/login | Signs in existing user | 
+| GET | /auth/logout | Logsout user | 
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
