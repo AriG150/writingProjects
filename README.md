@@ -33,24 +33,24 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 
 ## Development 
 
-# Sprint 1 
+### Sprint 1 
 -Wrote user story 
 -Wrote basic site architecture
 -Researched API and drafted models
 -Created basic wireframing
 
-# Sprint 2 
+### Sprint 2 
 -Implemented auth, including hashed passwords and an authorization flow 
 
-# Sprint 3 
+### Sprint 3 
 -Create a successful Axios API call 
 -Have user select from prompt option and see prompt information 
 
-# Sprint 4 
+### Sprint 4 
 -Stubbed out routes and set up models 
 -Completed routes 
 
-# Sprint 5 
+### Sprint 5 
 -Styling
 
 ## CRUD Routes and Models  
@@ -63,8 +63,7 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 | POST | /auth/login | Signs in existing user | 
 | GET | /auth/logout | Logout user | 
 | GET | /project/new | Loads Selected information | 
-| POST | /project/new | Create users project information, including entry and prompt information, to the database
-|
+| POST | /project/new | Create users project information, including entry and prompt information, to the database |
 | GET | /project/:id | View the project information |
 | POST | /project/:id | Creates the test information |
 | GET | /profile| Index of all users projects |
