@@ -1,14 +1,19 @@
-<h2> All Your Projects: </h2>
 
+<div class="general"> 
+  <h2> All Your Projects: </h2>
+  
+  
+    <ul>
+        <% project.forEach(function(projectInfo){ %>
+          <li id="lineItem" class="bigText">  <a href="/project/ <%= projectInfo.id %>"> <%= projectInfo.name %> </a> </li>
+          <span>
+              <a href="/profile/edit/<%= projectInfo.id %>"> Edit</a>
+              <form class="inline" method="POST" action="/profile/<%= projectInfo.id %>?_method=DELETE">
+                <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
+              </form>
+            </span>
+        <% }) %>
+    </ul>
 
-  <ul>
-      <% project.forEach(function(projectInfo){ %>
-        <li> <h3> <a href="/project/ <%= projectInfo.id %>"> <%= projectInfo.name %> </a> </h3>  </li>
-        <a href="/profile/edit/<%= projectInfo.id %>">Edit</a>
-        <form method="POST" action="/profile/<%= projectInfo.id %>?_method=DELETE">
-          <button type="submit" class="btn btn-danger btn-xs">Delete</button>
-        </form>
-      <% }) %>
-
-  </ul>
+</div>
 

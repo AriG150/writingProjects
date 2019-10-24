@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(230,221,222);
+}
+.general {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.bigText {
+  font-family: 'Gentium Basic', serif;
+}
+
+.littleText {
+  font-family: 'Playfair Display', serif;
+}
+
+#lineItem {
+  list-style-type: none;
+  font-size: 3em;
+  
+}
+
+
