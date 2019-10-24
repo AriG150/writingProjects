@@ -74,6 +74,11 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 
 | MODEL | SCHEMA | ASSOCIATIONS | 
 | ----- | ------ | ------------ |
+| Entry | text, projectId | Belongs to project | 
+| Project | name, promptId, userId | Belongs to user, belongs to prompt, has many entries | 
+| Prompt | text | Has many projects | 
+| User | name, email, password | Has many projects | 
+
 
 
 ## Future Improvements
