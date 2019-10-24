@@ -19,24 +19,6 @@ router.get('/new', function(req, res){
 })
 
 
-// Call/get the prompt (text), project(name), entry(text) information from the database, res.render onto view.ejs
-router.get('/:id', function(req, res){
-  db.project.findOne({
-    where: {
-      id: req.params.id
-    },
-    include: [db.prompt, db.entry]
-  })
-  .then(function(project){
-    res.render('view', { project })
-    console.log(`🐷`, project )
-  })
-  .catch(function(error){
-    console.log(`🐻`, 'bad news bears')
-    console.log(error)
-  })
-})
-
 
 //CREATE, holds all prompt, user, project, entry information associated with a prompt, saved to DB's 
 router.post('/new', function(req, res){
@@ -71,6 +53,24 @@ router.post('/new', function(req, res){
     })
 })
 
+
+// Call/get the prompt (text), project(name), entry(text) information from the database, res.render onto view.ejs
+router.get('/:id', function(req, res){
+  db.project.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.prompt, db.entry]
+  })
+  .then(function(project){
+    res.render('view', { project })
+    console.log(`🐷`, project )
+  })
+  .catch(function(error){
+    console.log(`🐻`, 'bad news bears')
+    console.log(error)
+  })
+})
 
 router.post('/project/:id', function(req, res){
   db.entry.create({
