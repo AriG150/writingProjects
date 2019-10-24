@@ -13,45 +13,45 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 - Be deployed online and accessible to the public.
 
 ## Technologies Used 
-- Node/Express
-  -Key Modules:
-    -Passport/Bycrypt: Authentification and password hashing
--PostgresSQL
--Sequelize 
+- Node/Express  
+  -Key Modules:  
+    -Passport/Bycrypt: Authentification and password hashing  
+-PostgresSQL  
+-Sequelize  
 
 ## API
-  From the wonderful and hillarious (https://ineedaprompt.com/)
+  From the wonderful and hillarious (https://ineedaprompt.com/)  
 
 ## User Story 
--As a user I want to...
-  -Signup/Login/Logout
-  -Request a prompt
-  -Write a new project
-  -View all projects
-  -View detail of individual project
-  -Edit/Delete a project
+-As a user I want to...  
+  -Signup/Login/Logout  
+  -Request a prompt  
+  -Write a new project  
+  -View all projects  
+  -View detail of individual project  
+  -Edit/Delete a project  
 
 ## Development 
 
 ### Sprint 1 
--Wrote user story 
--Wrote basic site architecture
--Researched API and drafted models
--Created basic wireframing
+-Wrote user story  
+-Wrote basic site architecture  
+-Researched API and drafted models  
+-Created basic wireframing  
 
 ### Sprint 2 
--Implemented auth, including hashed passwords and an authorization flow 
+-Implemented auth, including hashed passwords and an authorization flow   
 
 ### Sprint 3 
--Create a successful Axios API call 
--Have user select from prompt option and see prompt information 
+-Create a successful Axios API call   
+-Have user select from prompt option and see prompt information   
 
 ### Sprint 4 
--Stubbed out routes and set up models 
--Completed routes 
+-Stubbed out routes and set up models   
+-Completed routes   
 
 ### Sprint 5 
--Styling
+-Styling  
 
 ## CRUD Routes and Models  
 | CRUD | ROUTE | Function |
@@ -70,6 +70,7 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 | GET | /profile/edit/:id | Form to edit project name and text information | 
 | DELETE | /profile/:id | Deletes project | 
 | PUT | /profile/edit:id | Edit the project name and text | 
+
 
 | MODEL | SCHEMA | ASSOCIATIONS | 
 | ----- | ------ | ------------ |
