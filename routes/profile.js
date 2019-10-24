@@ -54,7 +54,6 @@ router.get('/edit/:id', function(req, res) {
 })
 
 router.put('/edit/:id', function(req, res){
-  console.log(req.body)
   db.project.update({
     name: req.body.projectName
   }, {

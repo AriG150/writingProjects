@@ -2,7 +2,7 @@
 
 <div class="general" class="test">
   <h2 class="bigText" >Prompt:</h2>
-  <h3 class="littleText"> <%= prompt.english %></h3>
+  <h3 class="prompt" class="littleText"> <%= prompt.english %></h3>
   
   <form action="/project/new" method="POST">
     <input type="hidden" name="prompt" value="<%= prompt.english %>">
@@ -11,7 +11,7 @@
     <hr>
     <div>
       <p class="bigText"> Start Writing!: </p>
-      <textarea name="textField" id="textField" cols="80" rows="10"></textarea>
+      <textarea name="textField" id="textField" cols="50" rows="7"></textarea>
       <p> <input type="submit" value="Save Project"> </p>
   
     </div>

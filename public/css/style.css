@@ -22,6 +22,12 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
+.prompt {
+  color: rgb(102, 68, 136);
+  font-size: 3em;
+  font-family: 'Playfair Display', serif;
+}
+
 #lineItem {
   list-style-type: none;
   font-size: 3em;
