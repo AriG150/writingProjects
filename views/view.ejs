@@ -1,23 +1,23 @@
-<h6>Hello World</h6>
-
 
 <h2>
-  Project name:
+  <p> Project name: </p>
   <%= project.name %> 
 </h2>
 
 <h2>
-  prompt name:
+  <p> Prompt name: </p>
   <%= project.prompt.text %> 
 </h2>
 
 <hr>
-<h2>
 
-  Entry info: 
+<h2>
+  <p>  Entry info: </p>
+  
   <% project.entries.forEach(function(entry){ %>
     <%= entry.text %>
   <% }) %>
-
 </h2>
+
+
 

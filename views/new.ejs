@@ -5,9 +5,14 @@
 
 <form action="/project/new" method="POST">
   <input type="hidden" name="prompt" value="<%= prompt.english %>">
-  Project Name <input type="text" name="projectName" id="projectName">
+  <p> Project Name </p>
+  <input type="text" name="projectName" id="projectName">
   <hr>
-  Text: <input type="text" name="textField" id="textField">
-  <input type="submit" value="Save Project">
+  <div>
+    <p> Start Writing!: </p>
+    <textarea name="textField" id="textField" cols="80" rows="10"></textarea>
+    <p> <input type="submit" value="Save Project"> </p>
+
+  </div>
 </form>
 

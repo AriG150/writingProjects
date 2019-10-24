@@ -38,8 +38,6 @@ router.get('/:id', function(req, res){
 })
 
 
-
-
 //CREATE, holds all prompt, user, project, entry information associated with a prompt, saved to DB's 
 router.post('/new', function(req, res){
   db.prompt.findOrCreate({
@@ -73,6 +71,18 @@ router.post('/new', function(req, res){
     })
 })
 
+
+router.post('/project/:id', function(req, res){
+  db.entry.create({
+    text: req.body.textField
+  })
+  .then(function(entry){
+    res.redirect('/project/:id')
+  })
+  .catch(function(error){
+    console.log(`🚨`, error)
+  })
+})
 
 
 module.exports = router;
