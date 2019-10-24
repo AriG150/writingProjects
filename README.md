@@ -41,7 +41,6 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 -Researched API and drafted models  
 -Created basic wireframing  
 
-![Photo of models](public/img/models.png)
 
 ### Sprint 2 
 -Implemented auth, including hashed passwords and an authorization flow   
@@ -71,7 +70,7 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 | GET | /project/:id | View the project information |
 | POST | /project/:id | Creates the test information |
 | GET | /profile| Index of all users projects |
-| GET | /profile/edit/:id | Form to edit project name and text information | 
+| GET | /profile/edit/:id | Form to edit project name | 
 | DELETE | /profile/:id | Deletes project | 
 | PUT | /profile/edit:id | Edit the project name and text | 
 

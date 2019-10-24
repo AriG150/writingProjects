@@ -12,7 +12,6 @@ router.get('/new', function(req, res){
   axios.get(`${BASE_URL}${req.query.promptType}`)
     .then(function(promptInfo){
       var selectedPrompt = promptInfo.data
-      console.log(`🍥`)
       console.log(selectedPrompt)
       res.render('new', {prompt: selectedPrompt})
     })
@@ -39,16 +38,11 @@ router.post('/new', function(req, res){
           projectId: project.id
         })
         .then(function(entry){
-          // console.log(`🚥 This is the entry information:`)
-          // console.log(entry)
-          // console.log(`🚥 this is the prompt information `)
-          // console.log(prompt)
           res.redirect(`/project/${project.id}`)
         })
       })
     }) 
     .catch(function(error){
-      console.log(`🐻`, 'bad news bears')
       console.log(error)
     })
 })
@@ -67,7 +61,6 @@ router.get('/:id', function(req, res){
     console.log(`🐷`, project )
   })
   .catch(function(error){
-    console.log(`🐻`, 'bad news bears')
     console.log(error)
   })
 })

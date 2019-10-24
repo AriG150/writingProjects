@@ -14,11 +14,9 @@ router.get('/', function(req, res) {
     }
   })
   .then(function(project){
-    // console.log(`🐙`, project)
     res.render('profile', {project})
     })
     .catch(function(error){
-      console.log(`🚨`, 'YOU HAVE AN ERROR')
       console.log(error)
     })
 })
@@ -32,12 +30,11 @@ router.delete('/:id', function(req, res) {
   }).then(function(){
     res.redirect('/profile')
   }).catch(function(error){
-    console.log(`🚨`)
     console.log(error)
   })
 })
 
-
+//form to edit name of project
 router.get('/edit/:id', function(req, res) {
   db.project.findOne({
     where: {
@@ -48,11 +45,11 @@ router.get('/edit/:id', function(req, res) {
     res.render('edit', {projectInfo})
   })
     .catch(function(error){
-      console.log(`🚨`)
       console.log(error)
   })
 })
 
+//Edit the name of the project
 router.put('/edit/:id', function(req, res){
   db.project.update({
     name: req.body.projectName
@@ -63,11 +60,9 @@ router.put('/edit/:id', function(req, res){
     include: [db.entry]
   })
     .then(function(projectInfo){
-      console.log(projectInfo)
       res.redirect('/profile')
     })
     .catch(function(error){
-      console.log(`🚨`)
       console.log(error)
     })
 })
