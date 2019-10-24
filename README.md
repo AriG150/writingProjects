@@ -79,6 +79,9 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 | Prompt | text | Has many projects | 
 | User | name, email, password | Has many projects | 
 
-
+## Acknowledgements
+  A huge thank you to my instructor, Steve Peters, my instructional assistant, Sarah King, and my TA's, Gavin Collander, Garrett O Moore, Michael Dudley, and Kelsey Cox. 
 
 ## Future Improvements
+-Improve styling   
+-Improve userflow
