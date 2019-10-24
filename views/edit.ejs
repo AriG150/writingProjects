@@ -1,9 +1,22 @@
 
 <div class="general">
-  <form class="general" action="/profile/edit/<%= projectInfo.id %>?_method=PUT" method="POST">
-    <p class="bigText" > Old name: <%= projectInfo.name %> </p>
-    <label class="bigText" >New Project Name: </label>
-    <input type="text" name="projectName" id="<%= projectInfo.name %>">
-    <button type="submit" class="btn btn-success btn-xs" >GO!</button>
+  <p>
+    <form class="general" action="/profile/edit/<%= projectInfo.id %>?_method=PUT" method="POST">
+      <p class="bigTextHeader" > Old Name: <%= projectInfo.name %> </p>
+      <label class="bigText" >New Project Name: </label>
+      </p>
+      <p>
+        <input type="text" name="projectName" id="<%= projectInfo.name %>">
+      </p>
+
+    <p>
+      <label class="bigText"> New Text Entry: </label>
+    </p>
+    <p>
+      <textarea type="text" name="textArea" id="textField" cols="60" rows="10"></textarea>
+    </p>
+    <p>
+      <button type="submit" class="btn btn-success btn-xs" >GO!</button>
+    </p>
   </form>
 </div>

@@ -60,7 +60,8 @@ router.put('/edit/:id', function(req, res){
   }, {
     where: {
       id: req.params.id
-    }
+    },
+    include: [db.entry]
   })
     .then(function(projectInfo){
       console.log(projectInfo)

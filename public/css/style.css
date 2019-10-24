@@ -9,8 +9,13 @@ body {
   display: inline-block;
 }
 
+.bigTextHeader{
+  font-family: 'Gentium Basic', serif;
+  font-size: 3em;
+}
 .bigText {
   font-family: 'Gentium Basic', serif;
+  font-size: 2em;
 }
 
 .littleText {
@@ -22,5 +27,4 @@ body {
   font-size: 3em;
   
 }
-
 
