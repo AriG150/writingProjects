@@ -4,7 +4,7 @@ A website for writers suffering from writers block. Select a hillarious prompt t
 
 ## Link to Live Site:
 - Please allow 10-15 seconds for Heroku to boot  
-
+[link to site](https://guarded-plains-36230.herokuapp.com/homepage)
 
 ## Requirements
 - Build a full stack Node app with at least 2 models.
